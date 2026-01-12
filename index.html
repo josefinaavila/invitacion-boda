@@ -77,12 +77,12 @@ p {
 /* ===== HERO ===== */
 .hero {
   background-image: linear-gradient(
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.35)
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.25)
   ), url('portada.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +291,6 @@ iframe {
 <section>
   <h2>🎁 Regalos</h2>
   <p>Tu presencia es lo más importante.<br>Si deseás regalarnos algo, te dejamos nuestros datos.</p>
-  <!-- 🔥 ESTE BOTÓN ABRE EL MODAL -->
   <a class="button" onclick="openModal()">VER DATOS</a>
 </section>
 
@@ -315,7 +314,6 @@ iframe {
   <iframe src="https://www.google.com/maps?q=Palma+de+Mallorca&output=embed"></iframe>
 </section>
 
-<!-- ===== MODAL REGALOS ===== -->
 <div id="modal" class="modal" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <span class="close" onclick="closeModal()">×</span>
@@ -331,7 +329,6 @@ iframe {
 </div>
 
 <script>
-/* CONTADOR */
 const targetDate = new Date("2026-10-03T17:00:00").getTime();
 const countdown = document.getElementById("countdown");
 
@@ -354,7 +351,6 @@ setInterval(() => {
   `;
 }, 1000);
 
-/* MODAL */
 function openModal() {
   document.getElementById("modal").style.display = "flex";
 }
@@ -363,7 +359,6 @@ function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
-/* ANIMACIONES SCROLL */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -379,4 +374,3 @@ document.querySelectorAll('section, .section-divider').forEach(el => {
 
 </body>
 </html>
-
