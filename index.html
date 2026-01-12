@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Josefina & Juanca</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -17,48 +16,65 @@ body {
   text-align: center;
 }
 
+/* ===== SECCIONES ===== */
 section {
-  padding: 90px 20px;
-  max-width: 750px;
+  padding: 60px 20px;
+  max-width: 1000px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
 }
 
-h1, h2 {
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1 {
   font-family: 'Playfair Display', serif;
+  font-size: 48px;
   font-weight: 400;
 }
 
-h1 {
-  font-size: 48px;
-}
-
 h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
 p {
-  font-size: 15px;
-  line-height: 1.8;
-  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.8px;
+  max-width: 600px;
+  margin: auto;
 }
 
+/* ===== BOTONES ===== */
 .button {
   display: inline-block;
-  margin-top: 25px;
-  padding: 14px 30px;
+  margin-top: 28px;
+  padding: 14px 38px;
   border: 1px solid #2b2b2b;
   text-decoration: none;
   color: #2b2b2b;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 3px;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
 .button:hover {
   background: #2b2b2b;
   color: white;
+  transform: translateY(-3px);
 }
 
+/* ===== HERO ===== */
 .hero {
   background-image: linear-gradient(
     rgba(0,0,0,0.35),
@@ -66,171 +82,301 @@ p {
   ), url('portada.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  opacity: 1;
+  transform: none;
+}
+
+.hero p {
+  letter-spacing: 3px;
+  font-size: 13px;
 }
 
 .divider {
-  width: 40px;
+  width: 50px;
   height: 1px;
   background: white;
-  margin: 30px auto;
+  margin: 26px auto;
 }
 
-.countdown {
-  font-size: 22px;
-  letter-spacing: 2px;
+/* ===== DIVISOR ===== */
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background: #c8c4bd;
+  margin: 60px auto;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
+
+.section-divider.visible {
+  opacity: 1;
+}
+
+/* ===== CONTADOR ===== */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-box span {
+  font-size: 46px;
+  font-family: 'Playfair Display', serif;
+}
+
+.time-box small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 6px;
+}
+
+.colon {
+  font-size: 34px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 18px;
+}
+
+/* ===== EVENTOS ===== */
+.event-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.event-box {
+  flex: 1;
+  background: #eeeae4;
+  border-radius: 20px;
+  padding: 45px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: transform 0.5s ease;
+}
+
+.event-box:hover {
+  transform: translateY(-6px);
+}
+
+.event-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+/* ===== MAPA ===== */
 iframe {
   width: 100%;
-  height: 250px;
+  height: 240px;
   border: 0;
   margin-top: 30px;
+  border-radius: 12px;
+}
+
+/* ===== MODAL REGALOS ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #f7f5f2;
+  padding: 40px 30px;
+  border-radius: 22px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  animation: modalFade 0.5s ease;
+  position: relative;
+}
+
+.modal-content h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@keyframes modalFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .event-wrapper {
+    flex-direction: column;
+  }
+  .countdown {
+    gap: 6px;
+  }
+  .time-box span {
+    font-size: 38px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PORTADA -->
 <section class="hero">
   <div>
     <p>¡NOS CASAMOS!</p>
     <h1>Josefina & Juanca</h1>
     <div class="divider"></div>
-    <p>NOS ENCANTARIA QUE ESTES PARA COMPARTIRLO</p>
+    <p>03 · 10 · 2026</p>
+    <p>MALLORCA, ESPAÑA</p>
   </div>
 </section>
 
-<!-- CUENTA REGRESIVA -->
 <section>
-  <h2>03.10.2026</h2>
+  <h2>Cuenta regresiva</h2>
   <div id="countdown" class="countdown"></div>
 </section>
 
-<!-- LA CEREMONIA SERÁ EN -->
+<div class="section-divider"></div>
+
 <section>
-  <h2>Ceremonia</h2>
-  <p>
-    Iglesia Sant Marçal<br>
-    Palma de Mallorca<br>
-    A las 17:00 hs
-  </p>
-  <a class="button" href="https://maps.google.com/?q=Iglesia+Sant+Marçal+Palma+de+Mallorca" target="_blank">
-    CÓMO LLEGAR
-  </a>
+  <h2>Dónde y cuándo</h2>
+  <div class="event-wrapper">
+    <div class="event-box">
+      <h3>⛪ Ceremonia</h3>
+      <p>Iglesia Sant Marçal<br>Palma de Mallorca<br>17:00 hs</p>
+      <a class="button" href="https://maps.google.com/?q=Iglesia+Sant+Marçal+Palma+de+Mallorca" target="_blank">📍 Cómo llegar</a>
+    </div>
+
+    <div class="event-box">
+      <h3>🎉 Fiesta</h3>
+      <p>Ses Cases de Sa Font Seca<br>Palma de Mallorca<br>Desde las 18:30 hs</p>
+      <a class="button" href="https://maps.google.com/?q=Ses+Cases+de+Sa+Font+Seca" target="_blank">📍 Cómo llegar</a>
+    </div>
+  </div>
+
+  <a class="button" href="PEGA_AQUI_FORM_RSVP" target="_blank">CONFIRMAR ASISTENCIA</a>
 </section>
 
-<!-- LA FIESTA SERÁ EN -->
+<div class="section-divider"></div>
+
 <section>
-  <h2>Fiesta</h2>
-  <p>
-    Ses Cases de Sa Font Seca<br>
-    Palma de Mallorca<br>
-    A partir de las 18:30 hs
-  </p>
-  <a class="button" href="https://maps.google.com/?q=Ses+Cases+de+Sa+Font+Seca" target="_blank">
-    CÓMO LLEGAR
-  </a>
+  <h2>🚌 Transporte</h2>
+  <p>Buses desde Hotel Meliá Palma Bay<br>Salida 16:30 hs · Regreso 03:00 hs</p>
+  <a class="button" href="PEGA_AQUI_FORM_BUS" target="_blank">QUIERO USAR EL BUS</a>
 </section>
 
-<!-- TRANSPORTE -->
+<div class="section-divider"></div>
+
 <section>
-  <h2>Transporte</h2>
-  <p>
-    Habrá buses disponibles para todos nuestros invitados.<br><br>
-    📍 Salida desde: <strong>Hotel Meliá Palma Bay</strong><br>
-    🕓 16:30 hs → Salimos hacia la Iglesia<br>
-    🚌 Luego nos trasladamos a la fiesta<br>
-    🌙 Regresamos al hotel a las 03:00 hs
-No te olvides confirmarnos que vas a usar los BUSES, ingresados en este link:
-  </p>
-  <a class="button" href="PEGA_AQUI_FORM_BUS" target="_blank">
-    QUIERO USAR EL BUS
-  </a>
+  <h2>👗 Dress Code</h2>
+  <p>Elegante<br>(pero que puedas bailarte TODO)</p>
 </section>
 
-<!-- DRESS CODE -->
+<div class="section-divider"></div>
+
 <section>
-  <h2>Dress Code</h2>
-  <p>Elegante (pero que puedas bailarte todo)</p>
+  <h2>🎁 Regalos</h2>
+  <p>Tu presencia es lo más importante.<br>Si deseás regalarnos algo, te dejamos nuestros datos.</p>
+  <!-- 🔥 ESTE BOTÓN ABRE EL MODAL -->
+  <a class="button" onclick="openModal()">VER DATOS</a>
 </section>
 
-<!-- CONFIRMAR ASISTENCIA -->
+<div class="section-divider"></div>
+
 <section>
-  <h2>Confirmación de asistencia</h2>
-  <p>
-    Es muy importante para nosotros que confirmes tu asistencia, en lo posible antes del 15 de Agosto
-  </p>
-  <a class="button" href="PEGA_AQUI_FORM_RSVP" target="_blank">
-    CONFIRMAR ASISTENCIA
-  </a>
+  <h2>🏨 Alojamiento</h2>
+  <p>Hotel Meliá Palma Bay<br>20% de descuento para invitados</p>
+  <a class="button" href="PEGA_AQUI_FORM_HOTEL" target="_blank">QUIERO ALOJARME</a>
 </section>
 
-<!-- REGALOS -->
+<div class="section-divider"></div>
+
 <section>
-  <h2>Regalos</h2>
-  <p>
-    ¡Tu presencia es lo más importante!<br><br>
-    Y si además quisieras regalarnos algo para empezar nuestra NUEVA ETAPA,
-    te dejamos nuestros datos
-  </p>
-  <a class="button" href="PEGA_AQUI_FORM_REGALOS" target="_blank">
-    VER DATOS
-  </a>
+  <h2>🌊 Mallorca Tips</h2>
+  <p>Playas · Restaurantes · Pueblos con encanto</p>
 </section>
 
-<!-- ALOJAMIENTO -->
 <section>
-  <h2>Alojamiento</h2>
-  <p>
-    Hemos reservado habitaciones en el<br>
-    <strong>Hotel Meliá Palma Bay</strong><br><br>
-    con un <strong>20% de descuento</strong> para nuestros invitados. Confirmarnos en el siguiente link si te interesa alguna habitación, ahi te contamos las diferentes opciones y precios. ESTE SERÁ EL PUNTO DE ENCUENTRO Y DE PARTIDA DE LOS BUSES.
-  </p>
-  <a class="button" href="PEGA_AQUI_FORM_HOTEL" target="_blank">
-    QUIERO ALOJARME
-  </a>
+  <h2>📍 Ubicación</h2>
+  <iframe src="https://www.google.com/maps?q=Palma+de+Mallorca&output=embed"></iframe>
 </section>
 
-<!-- RECOMENDACIONES -->
-<section>
-  <h2>Recomendaciones en Mallorca</h2>
-  <p>
-    Si vas a estar unos días mas por la ISLA te contamos cosas y lugares IN CRE I BLES que tiene Palma de Mallorca y no te podes perder:<br><br>
-    🌊 Playas increíbles<br>
-    🍴 Restaurantes locales<br>
-    🏘️ Pueblos con encanto
-  </p>
-</section>
+<!-- ===== MODAL REGALOS ===== -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3>Datos bancarios</h3>
+    <p>
+      Banco XXXXX<br>
+      Titular: Josefina & Juanca<br>
+      IBAN: ES00 XXXX XXXX XXXX XXXX<br>
+      SWIFT: XXXXX<br><br>
+      💛 Gracias por acompañarnos
+    </p>
+  </div>
+</div>
 
-<!-- MAPA -->
-<section>
-  <h2>Ubicación</h2>
-  <iframe
-    src="https://www.google.com/maps?q=Palma+de+Mallorca&output=embed">
-  </iframe>
-</section>
-
-<!-- SCRIPT CUENTA REGRESIVA -->
 <script>
+/* CONTADOR */
 const targetDate = new Date("2026-10-03T17:00:00").getTime();
 const countdown = document.getElementById("countdown");
 
 setInterval(() => {
   const now = new Date().getTime();
   const distance = targetDate - now;
+  const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const h = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((distance / (1000 * 60)) % 60);
+  const s = Math.floor((distance / 1000) % 60);
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-  countdown.innerHTML = `${days} días · ${hours} hs · ${minutes} min`;
+  countdown.innerHTML = `
+    <div class="time-box"><span>${d}</span><small>DÍAS</small></div>
+    <div class="colon">:</div>
+    <div class="time-box"><span>${h}</span><small>HORAS</small></div>
+    <div class="colon">:</div>
+    <div class="time-box"><span>${m}</span><small>MINUTOS</small></div>
+    <div class="colon">:</div>
+    <div class="time-box"><span>${s}</span><small>SEGUNDOS</small></div>
+  `;
 }, 1000);
+
+/* MODAL */
+function openModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+/* ANIMACIONES SCROLL */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('section, .section-divider').forEach(el => {
+  observer.observe(el);
+});
 </script>
 
 </body>
 </html>
+
