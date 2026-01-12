@@ -1,63 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maru & Agus</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background: #f6f4f1;
-      color: #2c2c2c;
-      text-align: center;
-    }
-    section {
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-weight: normal;
-      letter-spacing: 2px;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 16px 32px;
-      border: 1px solid #2c2c2c;
-      text-decoration: none;
-      color: #2c2c2c;
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josefina & Juanca</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #f7f5f2;
+  color: #2b2b2b;
+  text-align: center;
+}
+
+section {
+  padding: 90px 20px;
+  max-width: 750px;
+  margin: auto;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  border: 1px solid #2b2b2b;
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.button:hover {
+  background: #2b2b2b;
+  color: white;
+}
+
+.hero {
+  background-image: linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.35)
+  ), url('portada.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: white;
+  margin: 30px auto;
+}
+
+.countdown {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+  margin-top: 30px;
+}
+</style>
 </head>
+
 <body>
 
-<section>
-  <h2>¡CHIN CHIN!</h2>
-  <h1>Maru & Agus</h1>
-  <p>Nos casamos</p>
+<!-- PORTADA -->
+<section class="hero">
+  <div>
+    <p>¡CHIN CHIN!</p>
+    <h1>Josefina & Juanca</h1>
+    <div class="divider"></div>
+    <p>NOS CASAMOS</p>
+  </div>
 </section>
 
+<!-- CUENTA REGRESIVA -->
 <section>
-  <h2>05 · 12 · 25</h2>
-  <p>18:00 hs</p>
+  <h2>Falta muy poco</h2>
+  <div id="countdown" class="countdown"></div>
 </section>
 
+<!-- CEREMONIA -->
 <section>
-  <p>ESPACIO PK CAMPO</p>
-  <p>Capilla del Señor</p>
-</section>
-
-<section>
-  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSd11isomCi4TOqxmXPMmy2Eo0TYDZWOz711sPwNme5zQ80c5w/viewform?usp=header" target="_blank">
-    CONFIRMAR ASISTENCIA
+  <h2>Ceremonia</h2>
+  <p>
+    Iglesia Sant Marçal<br>
+    Palma de Mallorca<br>
+    17:00 hs
+  </p>
+  <a class="button" href="https://maps.google.com/?q=Iglesia+Sant+Marçal+Palma+de+Mallorca" target="_blank">
+    CÓMO LLEGAR
   </a>
 </section>
+
+<!-- FIESTA -->
+<section>
+  <h2>Fiesta</h2>
+  <p>
+    Ses Cases de Sa Font Seca<br>
+    Palma de Mallorca<br>
+    18:30 hs
+  </p>
+  <a class="button" href="https://maps.google.com/?q=Ses+Cases+de+Sa+Font+Seca" target="_blank">
+    CÓMO LLEGAR
+  </a>
+</section>
+
+<!-- TRANSPORTE -->
+<section>
+  <h2>Transporte</h2>
+  <p>
+    Habrá buses disponibles para los invitados.<br><br>
+    📍 Salida: <strong>Hotel Meliá Palma Bay</strong><br>
+    🕓 16:30 hs → hacia la Iglesia<br>
+    🚌 Luego traslado a la fiesta<br>
+    🌙 Regreso al hotel a las 03:00 hs
+  </p>
+  <a class="button" href="PEGA_AQUI_FORM_BUS" target="_blank">
+    QUIERO USAR EL BUS
+  </a>
+</section>
+
+<!-- DRESS CODE -->
+<section>
+  <h2>Dress Code</h2>
+  <p>Elegante</p>
+</section>
+
+<!-- REGALOS -->
+<section>
+  <h2>Regalos</h2>
+  <p>
+    ¡Tu presencia es lo más importante!<br><br>
+    Y si quieres regalarnos algo para empezar nuestra nueva etapa,
+    te dejamos nuestros datos a continuación.
+  </p>
+  <a class="button" href="PEGA_AQUI_FORM_REGALOS" target="_blank">
+    VER DATOS
+  </a>
+</section>
+
+<!-- ALOJAMIENTO -->
+<section>
+  <h2>Alojamiento</h2>
+  <p>
+    Hemos reservado habitaciones en el<br>
+    <strong>Hotel Meliá Palma Bay</strong><br><br>
+    con un <strong>20% de descuento</strong> para nuestros invitados.
+  </p>
+  <a class="button" href="PEGA_AQUI_FORM_HOTEL" target="_blank">
+    QUIERO ALOJARME
+  </a>
+</section>
+
+<!-- RECOMENDACIONES -->
+<section>
+  <h2>Recomendaciones en Mallorca</h2>
+  <p>
+    Si decides quedarte unos días más, te recomendamos:<br><br>
+    🌊 Playas increíbles<br>
+    🍴 Restaurantes locales<br>
+    🏘️ Pueblos con encanto
+  </p>
+</section>
+
+<!-- MAPA -->
+<section>
+  <h2>Ubicación</h2>
+  <iframe
+    src="https://www.google.com/maps?q=Palma+de+Mallorca&output=embed">
+  </iframe>
+</section>
+
+<!-- SCRIPT CUENTA REGRESIVA -->
+<script>
+const targetDate = new Date("2026-10-03T17:00:00").getTime();
+const countdown = document.getElementById("countdown");
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  countdown.innerHTML = `${days} días · ${hours} hs · ${minutes} min`;
+}, 1000);
+</script>
 
 </body>
 </html>
