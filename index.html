@@ -77,8 +77,8 @@ p {
 /* ===== HERO ===== */
 .hero {
   background-image: linear-gradient(
-    rgba(255,255,255,0.15),
-    rgba(255,255,255,0.15)
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.25)
   ), url('portada.jpg');
   background-size: cover;
   background-position: center;
@@ -230,6 +230,43 @@ iframe {
     font-size: 38px;
   }
 }
+
+/* ===== TIPS GRID ===== */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.tip-box {
+  background: #eeeae4;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: left;
+}
+
+.tip-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.tip-box ul {
+  list-style: none;
+  padding: 0;
+  font-size: 13px;
+}
+
+.tip-box li {
+  margin-bottom: 10px;
+}
+
+.tip-box a {
+  font-size: 11px;
+  margin-left: 6px;
+}
+
 </style>
 </head>
 
@@ -238,7 +275,7 @@ iframe {
 <section class="hero">
   <div>
     <p>¡NOS CASAMOS!</p>
-    <h1>Juanca & Josefina</h1>
+    <h1>Josefina & Juanca</h1>
     <div class="divider"></div>
     <p>03 · 10 · 2026</p>
     <p>MALLORCA, ESPAÑA</p>
@@ -257,67 +294,104 @@ iframe {
   <div class="event-wrapper">
     <div class="event-box">
       <h3>⛪ Ceremonia</h3>
-      <p>Iglesia Sant Marçal<br>Sa Cabaneta<br>17:00 hs</p>
+      <p>Iglesia Sant Marçal<br>Palma de Mallorca<br>17:00 hs</p>
       <a class="button" href="https://maps.google.com/?q=Iglesia+Sant+Marçal+Palma+de+Mallorca" target="_blank">📍 Cómo llegar</a>
     </div>
 
     <div class="event-box">
       <h3>🎉 Fiesta</h3>
-      <p>Ses Cases de Sa Font Seca<br>Sa Font Seca<br>18:30 hs</p>
+      <p>Ses Cases de Sa Font Seca<br>Palma de Mallorca<br>Desde las 18:30 hs</p>
       <a class="button" href="https://maps.google.com/?q=Ses+Cases+de+Sa+Font+Seca" target="_blank">📍 Cómo llegar</a>
     </div>
   </div>
 
-  <a class="button" href="https://docs.google.com/forms/d/1A6Xx9Xb8CgNpWJXM9j7s-tL5NCrENe5gpm-Up3gHzB8/edit?usp=forms_home&ouid=100448189968822950586&ths=true" target="_blank">CONFIRMAR ASISTENCIA</a>
+  <a class="button" href="PEGA_AQUI_FORM_RSVP" target="_blank">CONFIRMAR ASISTENCIA</a>
 </section>
 
 <div class="section-divider"></div>
 
 <section>
   <h2>🚌 Transporte</h2>
-  <p>Contaremos con buses que saldrán desde el <strong>Hotel Meliá Palma Bay</strong><br>🕓 Salida 16:30 hs → vamos hacia la Iglesia<br>🚌 Luego nos trasladamos a la fiesta<br>🌙 Regreso a las 03:00 hs</p>
-  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSetOmCbTChXKouBl4_H4VQP7FlV8KQInNSdbHQwkrv8u0DbyQ/viewform?usp=publish-editor" target="_blank">QUIERO USAR EL BUS</a>
+  <p>Buses desde Hotel Meliá Palma Bay<br>Salida 16:30 hs · Regreso 03:00 hs</p>
+  <a class="button" href="PEGA_AQUI_FORM_BUS" target="_blank">QUIERO USAR EL BUS</a>
 </section>
 
 <div class="section-divider"></div>
 
 <section>
   <h2>👗 Dress Code</h2>
-  <p><strong>Elegante</strong><br>(pero que puedas bailarte TODO)</p>
+  <p>Elegante<br>(pero que puedas bailarte TODO)</p>
 </section>
 
 <div class="section-divider"></div>
 
 <section>
   <h2>🎁 Regalos</h2>
-  <p>¡Tu presencia es lo más importante para nosotros!<br>Si también quisieras regalarnos algo para <strong>nuestra nueva etapa</strong>, te dejamos nuestros datos</p>
-  <a class="button" onclick="openModal()">DATOS CUENTA EUR/USD/ARG</a>
+  <p>Tu presencia es lo más importante.<br>Si deseás regalarnos algo, te dejamos nuestros datos.</p>
+  <a class="button" onclick="openModal()">VER DATOS</a>
 </section>
 
 <div class="section-divider"></div>
 
 <section>
   <h2>🏨 Alojamiento</h2>
-  Hemos reservado varias habitaciones en el<br> <strong>Hotel Meliá Palma Bay</strong><br> con un <strong>20% de descuento</strong> para nuestros invitados<br><br>Si te interesa una habitación, confirmarnos en el siguiente LINK<br> y te contamos opciones y precios </p>
-  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSduaZoRbKc7__RRus6LQZ5miILgTOGhUsovyOWcWqeghGv6uA/viewform?usp=publish-editor" target="_blank">QUIERO ALOJARME</a>
+  <p>Hotel Meliá Palma Bay<br>20% de descuento para invitados</p>
+  <a class="button" href="PEGA_AQUI_FORM_HOTEL" target="_blank">QUIERO ALOJARME</a>
 </section>
 
 <div class="section-divider"></div>
 
 <section>
-  <h2>🌊 <strong>Mallorca Tips</strong></h2>
-<p>Si vas a estar unos días mas por la ISLA te contamos cosas y<br> lugares <strong>IN CRE I BLES</strong> que tiene Mallorca y no te podes perder <p><br><br>
+  <h2>🌊 Mallorca Tips</h2>
   <p>Playas · Restaurantes · Pueblos con encanto</p>
-</section>
+  <a class="button" onclick="toggleTips()">MOSTRAR TIPS</a>
 
-<div class="section-divider"></div>
+  <div id="tips" class="tips-content">
 
-</section> 
-<!-- CONFIRMACIÓN --> 
-<section> 
-<h2>Confirmación de asistencia</h2> 
-<p>Es muy importante para nosotros que confirmes tu asistencia</p><strong>en lo posible antes del 15 de Agosto</strong><br> <a class="button" href="https://docs.google.com/forms/d/1A6Xx9Xb8CgNpWJXM9j7s-tL5NCrENe5gpm-Up3gHzB8/edit" target="_blank"> CONFIRMAR ASISTENCIA 
-</a> 
+    <div class="tips-grid">
+
+      <div class="tip-box">
+        <h3>Pueblos</h3>
+        <ul>
+          <li>Sóller</li>
+          <li>Valldemossa</li>
+          <li>Deià</li>
+          <li>Santanyí</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h3>Playas <small>(por favor ser discretos 🤍)</small></h3>
+        <ul>
+          <li>Na Clara <a href="https://maps.app.goo.gl/SbmYeRVWtnXDbq3V7" target="_blank">mapa</a></li>
+          <li>Cala Tuent <a href="https://maps.app.goo.gl/KfSNeG9gaPFZPyuz6" target="_blank">mapa</a></li>
+          <li>Es Cargol <a href="https://maps.app.goo.gl/cVCvECiw9NCSJ6E87" target="_blank">mapa</a></li>
+          <li>Cala Màrmols <a href="https://maps.app.goo.gl/pbQvfh195uyGfy3eA" target="_blank">mapa</a></li>
+          <li>Cala Agulla <a href="https://maps.app.goo.gl/uE4fmFQ14KHxosx3A" target="_blank">mapa</a></li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h3>Restaurantes</h3>
+        <ul>
+          <li>
+            Ensaimada obligatoria ⭐
+            <a href="https://maps.app.goo.gl/CWQoaokpfFhozJKq5" target="_blank">mapa</a>
+          </li>
+          <li>
+            Paella (reservar)
+            <a href="https://maps.app.goo.gl/xi2PfvJJALweqkBr8" target="_blank">mapa</a>
+          </li>
+          <li>
+            Tapas chic
+            <a href="https://maps.app.goo.gl/B39bmB1Ly5eMhDA18" target="_blank">mapa</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 
@@ -332,7 +406,7 @@ iframe {
     <h3>Datos bancarios</h3>
     <p>
       Banco XXXXX<br>
-      Titular: JUANCA & JOSEFINA<br>
+      Titular: Josefina & Juanca<br>
       IBAN: ES00 XXXX XXXX XXXX XXXX<br>
       SWIFT: XXXXX<br><br>
       💛 Gracias por acompañarnos
@@ -382,7 +456,15 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('section, .section-divider').forEach(el => {
   observer.observe(el);
 });
+function toggleTips() {
+  const tips = document.getElementById("tips");
+  if (!tips) return;
+  tips.style.display = tips.style.display === "block" ? "none" : "block";
+}
+
+
 </script>
 
 </body>
 </html>
+
