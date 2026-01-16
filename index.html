@@ -333,6 +333,28 @@ iframe {
     height: 200px;
   }
 }
+/* ===== CUENTAS BANCARIAS ===== */
+.bank-grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.bank-box {
+  flex: 1;
+  background: #eeeae4;
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bank-grid {
+    flex-direction: column;
+  }
+}
 
 
 </style>
@@ -475,16 +497,34 @@ iframe {
 <div id="modal" class="modal" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <span class="close" onclick="closeModal()">×</span>
+
     <h3>Datos bancarios</h3>
-    <p>
-      Banco XXXXX<br>
-      Titular: Josefina & Juanca<br>
-      IBAN: ES00 XXXX XXXX XXXX XXXX<br>
-      SWIFT: XXXXX<br><br>
-      💛 Gracias por acompañarnos
-    </p>
+
+    <div class="bank-grid">
+
+      <div class="bank-box">
+        <strong>Cuenta 1</strong><br>
+        Banco XXXXX<br>
+        Titular: Josefina<br>
+        IBAN: ES00 XXXX XXXX XXXX XXXX<br>
+        SWIFT: XXXXX
+      </div>
+
+      <div class="bank-box">
+        <strong>Cuenta 2</strong><br>
+        Banco YYYYY<br>
+        Titular: Juanca<br>
+        IBAN: ES00 YYYY YYYY YYYY YYYY<br>
+        SWIFT: YYYYY
+      </div>
+
+    </div>
+
+    <p style="margin-top:20px;">💛 Gracias por acompañarnos</p>
+
   </div>
 </div>
+
 
 <script>
 const targetDate = new Date("2026-10-03T17:00:00").getTime();
