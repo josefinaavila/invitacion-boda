@@ -448,7 +448,11 @@ iframe {
 
 <section>
   <h2>🎁 Regalos</h2>
-  <p>Tu presencia es lo más importante.<br>Si deseás regalarnos algo, te dejamos nuestros datos.</p>
+  <p data-i18n="gifts_text">
+  Tu presencia es lo más importante.<br>
+  Si deseás regalarnos algo, te dejamos nuestros datos.
+</p>
+
   <a class="button" onclick="openModal()">VER DATOS</a>
 </section>
 
@@ -606,12 +610,21 @@ function toggleTips() {
 }
 const translations = {
   es: {
-    we_are_getting_married: "¡NOS CASAMOS!"
+    we_are_getting_married: "¡NOS CASAMOS!",
+    countdown_title: "Cuenta regresiva",
+    where_when: "Dónde y cuándo",
+    rsvp: "CONFIRMAR ASISTENCIA",
+    gifts_text: "Tu presencia es lo más importante.<br>Si deseás regalarnos algo, te dejamos nuestros datos."
   },
   en: {
-    we_are_getting_married: "WE'RE GETTING MARRIED!"
+    we_are_getting_married: "WE'RE GETTING MARRIED!",
+    countdown_title: "Countdown",
+    where_when: "Where & When",
+    rsvp: "RSVP",
+    gifts_text: "Your presence is the most important thing.<br>If you wish to give us a gift for this new era of ours, here are our bank details."
   }
 };
+
 
 function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
