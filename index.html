@@ -266,6 +266,74 @@ iframe {
   font-size: 11px;
   margin-left: 6px;
 }
+/* ===== FIX VISUAL MALLORCA TIPS ===== */
+.tips-content {
+  display: none;
+  margin-top: 30px;
+  background: #eeeae4;
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+/* ===== NUEVO LAYOUT TIPS ===== */
+
+.tips-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin: 50px 0 30px;
+}
+
+.tip-item {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 35px;
+  background: #f7f5f2;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.tip-item img {
+  width: 180px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.tip-info {
+  text-align: left;
+}
+
+.tip-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.tip-info a {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  text-decoration: none;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .tip-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tip-info {
+    text-align: center;
+  }
+  .tip-item img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
 
 </style>
 </head>
@@ -348,50 +416,56 @@ iframe {
 
   <div id="tips" class="tips-content">
 
-    <div class="tips-grid">
+   <div id="tips" class="tips-content">
 
-      <div class="tip-box">
-        <h3>Pueblos</h3>
-        <ul>
-          <li>Sóller</li>
-          <li>Valldemossa</li>
-          <li>Deià</li>
-          <li>Santanyí</li>
-        </ul>
-      </div>
+  <h3 class="tips-section-title">🏘️ Pueblos con encanto</h3>
 
-      <div class="tip-box">
-        <h3>Playas <small>(por favor ser discretos 🤍)</small></h3>
-        <ul>
-          <li>Na Clara <a href="https://maps.app.goo.gl/SbmYeRVWtnXDbq3V7" target="_blank">mapa</a></li>
-          <li>Cala Tuent <a href="https://maps.app.goo.gl/KfSNeG9gaPFZPyuz6" target="_blank">mapa</a></li>
-          <li>Es Cargol <a href="https://maps.app.goo.gl/cVCvECiw9NCSJ6E87" target="_blank">mapa</a></li>
-          <li>Cala Màrmols <a href="https://maps.app.goo.gl/pbQvfh195uyGfy3eA" target="_blank">mapa</a></li>
-          <li>Cala Agulla <a href="https://maps.app.goo.gl/uE4fmFQ14KHxosx3A" target="_blank">mapa</a></li>
-        </ul>
-      </div>
-
-      <div class="tip-box">
-        <h3>Restaurantes</h3>
-        <ul>
-          <li>
-            Ensaimada obligatoria ⭐
-            <a href="https://maps.app.goo.gl/CWQoaokpfFhozJKq5" target="_blank">mapa</a>
-          </li>
-          <li>
-            Paella (reservar)
-            <a href="https://maps.app.goo.gl/xi2PfvJJALweqkBr8" target="_blank">mapa</a>
-          </li>
-          <li>
-            Tapas chic
-            <a href="https://maps.app.goo.gl/B39bmB1Ly5eMhDA18" target="_blank">mapa</a>
-          </li>
-        </ul>
-      </div>
-
+  <div class="tip-item">
+    <img src="soller.jpg">
+    <div class="tip-info">
+      <h4>👉 Sóller</h4>
+      <a href="https://maps.app.goo.gl/XXXXXXXX" target="_blank">Ver en el mapa</a>
     </div>
-
   </div>
+
+  <div class="tip-item">
+    <img src="valldemossa.jpg">
+    <div class="tip-info">
+      <h4>👉 Valldemossa</h4>
+      <a href="https://maps.app.goo.gl/XXXXXXXX" target="_blank">Ver en el mapa</a>
+    </div>
+  </div>
+
+  <h3 class="tips-section-title">🌊 Playas</h3>
+
+  <div class="tip-item">
+    <img src="na-clara.jpg">
+    <div class="tip-info">
+      <h4>👉 Na Clara</h4>
+      <a href="https://maps.app.goo.gl/SbmYeRVWtnXDbq3V7" target="_blank">Ver en el mapa</a>
+    </div>
+  </div>
+
+  <div class="tip-item">
+    <img src="cala-tuent.jpg">
+    <div class="tip-info">
+      <h4>👉 Cala Tuent</h4>
+      <a href="https://maps.app.goo.gl/KfSNeG9gaPFZPyuz6" target="_blank">Ver en el mapa</a>
+    </div>
+  </div>
+
+  <h3 class="tips-section-title">🍽️ Restaurantes</h3>
+
+  <div class="tip-item">
+    <img src="ensaimada.jpg">
+    <div class="tip-info">
+      <h4>👉 Ensaimada obligatoria ⭐</h4>
+      <a href="https://maps.app.goo.gl/CWQoaokpfFhozJKq5" target="_blank">Ver en el mapa</a>
+    </div>
+  </div>
+
+</div>
+
 </section>
 
 
