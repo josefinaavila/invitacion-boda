@@ -77,8 +77,8 @@ p {
 /* ===== HERO ===== */
 .hero {
   background-image: linear-gradient(
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0.25)
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.15)
   ), url('portada.jpg');
   background-size: cover;
   background-position: center;
@@ -287,10 +287,17 @@ iframe {
   display: flex;
   gap: 30px;
   align-items: center;
-  margin-bottom: 35px;
-  background: #f7f5f2;
+  margin-bottom: 30px;
+  background: white;
   border-radius: 20px;
   padding: 25px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tip-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .tip-item img {
@@ -375,6 +382,32 @@ iframe {
 
 .lang-switch button:hover {
   text-decoration: underline;
+}
+/* ===== TIPS BLOQUES ===== */
+
+.tips-block {
+  padding: 40px 30px;
+  border-radius: 26px;
+  margin: 40px 0;
+}
+
+/* fondo más claro */
+.tips-light {
+  background: #f7f5f2;
+}
+
+/* fondo arena */
+.tips-dark {
+  background: #e9e4dc;
+}
+
+.tips-section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #c8c4bd;
+  margin: 14px auto 0;
 }
 
 
@@ -516,6 +549,7 @@ iframe {
 
   <div id="tips" class="tips-content">
 
+  <div class="tips-block tips-light">
   <h3 class="tips-section-title" data-i18n="tips_towns">
   🏘️ Pueblos con encanto
 </h3>
@@ -557,6 +591,7 @@ iframe {
 </div>
 
 
+  <div class="tips-block tips-dark">
   <h3 class="tips-section-title" data-i18n="tips_beaches">
   🌊 Playas
 </h3>
@@ -609,6 +644,7 @@ iframe {
 
 
 
+  <div class="tips-block tips-light">
   <h3 class="tips-section-title" data-i18n="tips_restaurants">
   🍽️ Restaurantes
 </h3>
