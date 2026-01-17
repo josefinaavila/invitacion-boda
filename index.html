@@ -419,6 +419,40 @@ iframe {
   background: #c8c4bd;
   margin: 14px auto 0;
 }
+/* ===== ALOJAMIENTO DESPLEGABLE ===== */
+.accommodation-content {
+  display: none;
+  margin-top: 40px;
+  background: #eeeae4;
+  border-radius: 26px;
+  padding: 40px 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.accommodation-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.accommodation-hotel {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.accommodation-hotel a {
+  color: #2b2b2b;
+  text-decoration: underline;
+}
+
+.accommodation-note {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
 
 
 </style>
@@ -509,7 +543,7 @@ iframe {
 <section>
   <h2 data-i18n="gifts_title">🎁 Regalos</h2>
   <p data-i18n="gifts_text">
-  ¡Tu presencia es lo más importante PARA NOSOTROS!.<br>
+  ¡Tu presencia es lo más importante para nosotros!.<br>
   Y si también querés regalarnos algo para nuestra nueva etapa,<br> te dejamos nuestros datos abajo
 </p>
 
@@ -527,14 +561,71 @@ iframe {
     Claro que podés alojarte donde quieras! Pero te dejamos opciones de algunos hoteles de Palma donde conseguimos descuentos<br> Uno de estos hoteles será el punto de partida de buses<br>Si te interesa una habitación completa el formulario en este link
   </p>
 
+ <a
+  class="button"
+  onclick="toggleAccommodation()"
+  data-i18n="accommodation_button"
+>
+  QUIERO ALOJARME
+</a>
+<div id="accommodation-info" class="accommodation-content">
+
+  <h3 class="accommodation-subtitle">
+    Cadena de hoteles Meliá en Palma
+  </h3>
+
+  <p class="accommodation-hotel">
+    <a href="https://maps.app.goo.gl/xi2PfvJJALweqkBr8" target="_blank">
+      Hotel Meliá Palma Marina
+    </a><br>
+    <small>🚍 De aquí saldrá nuestro bus hacia la boda</small>
+  </p>
+
+  <p class="accommodation-hotel">
+    <a href="https://maps.app.goo.gl/nSqJRUMBLtx8nL9V7" target="_blank">
+      Hotel Innside by Meliá Palma Bosque
+    </a>
+  </p>
+
+  <p class="accommodation-hotel">
+    <a href="https://maps.app.goo.gl/B39bmB1Ly5eMhDA18" target="_blank">
+      Hotel Palma Bellver by Meliá
+    </a>
+  </p>
+
+  <p class="accommodation-note">
+    Estos 3 hoteles se encuentran muy cerquita el uno del otro.<br>
+    Para reservar habitación con nuestro descuento accedé a la siguiente página:
+  </p>
+
   <a
     class="button"
-    href="https://docs.google.com/forms/d/1N1BmEzr7iWRlKCmYrbpCoE-2A6gE8SSFvFfVg4YtEN4/edit"
+    href="https://www.melia.com"
     target="_blank"
-    data-i18n="accommodation_button"
   >
-    QUIERO ALOJARME
+    WEB MELIÁ
   </a>
+
+  <hr style="margin:40px 0; opacity:0.3;">
+
+  <h3 class="accommodation-subtitle">
+    Hotel Nou Baleares
+  </h3>
+
+  <p class="accommodation-hotel">
+    <a href="https://www.noubaleares.com" target="_blank">
+      Acceso directo a la web del hotel
+    </a>
+  </p>
+
+  <p class="accommodation-note">
+    Para reservar habitación con nuestro descuento ingresá el código promocional:
+  </p>
+
+  <strong>BODAJOSEFINA</strong>
+
+</div>
+
 </section>
 
 
@@ -826,6 +917,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!tips) return;
     tips.style.display = tips.style.display === "block" ? "none" : "block";
   };
+window.toggleAccommodation = function () {
+  const acc = document.getElementById("accommodation-info");
+  if (!acc) return;
+  acc.style.display = acc.style.display === "block" ? "none" : "block";
+};
+
 
   const translations = {
     es: {
@@ -893,7 +990,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hours: "HOURS",
       minutes: "MINUTES",
       seconds: "SECONDS",
-      transport_title: "🚌 Transportation",
+      transport_title: "🚌 Shuttle",
       transport_text: "We will have buses departing from the <br>Meliá Palma Marina Hotel<br>Departure 4:30 PM · Return 3:30 AM<br>If you wish to use the bus, please complete the following link",
       transport_button: "I WANT TO USE THE BUS",
       dress_code_title: "👗 Dress Code",
