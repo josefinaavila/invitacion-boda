@@ -494,6 +494,29 @@ iframe {
     height: 140px;
   }
 }
+/* ===== COPIAR DATOS BANCARIOS ===== */
+.bank-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.copy-btn:hover {
+  transform: scale(1.2);
+}
+
+.copy-text {
+  font-weight: 500;
+}
 
 
 </style>
@@ -885,29 +908,61 @@ iframe {
     <div class="bank-grid">
 
      <div class="bank-box">
-  <strong data-i18n="account_1">CUENTA EUR USD</strong><br>
+  <strong data-i18n="account_1">CUENTA EUR / USD</strong><br>
 
-  <span data-i18n="bank_label">Banco</span> REVOLUT<br>
+  <div class="bank-line">
+    <span data-i18n="bank_label">Banco</span>: REVOLUT
+  </div>
 
-  <span data-i18n="holder_label">Titular</span>: Juan Carlos Serrano Pallicer<br>
+  <div class="bank-line">
+    <span data-i18n="holder_label">Titular</span>: Juan Carlos Serrano Pallicer
+  </div>
 
-  <span data-i18n="iban_label">IBAN</span>: ES28 1583 0001 1890 1780 1677<br>
+  <div class="bank-line">
+    <span>IBAN</span>:
+    <span class="copy-text" data-copy="ES28 1583 0001 1890 1780 1677">
+      ES28 1583 0001 1890 1780 1677
+    </span>
+    <button class="copy-btn" onclick="copyText(this)">📋</button>
+  </div>
 
-  <span data-i18n="swift_label">BIC/SWIFT</span>: REVOESM2
+  <div class="bank-line">
+    <span>SWIFT</span>:
+    <span class="copy-text" data-copy="REVOESM2">REVOESM2</span>
+    <button class="copy-btn" onclick="copyText(this)">📋</button>
+  </div>
 </div>
+
 
 
       <div class="bank-box">
   <strong data-i18n="account_2">CUENTA ARG 🇦🇷</strong><br>
 
-  <span data-i18n="bank_label">Banco</span> MERCADOPAGO<br>
+  <div class="bank-line">
+    <span data-i18n="bank_label">Banco</span>: MERCADOPAGO
+  </div>
 
-  <span data-i18n="holder_label">Titular</span>: Maria Josefina Avila<br>
+  <div class="bank-line">
+    <span data-i18n="holder_label">Titular</span>: Maria Josefina Avila
+  </div>
 
-  <span data-i18n="iban_label">CBU</span>: 000000 3100 0498 4116 2700<br>
+  <div class="bank-line">
+    <span>CBU</span>:
+    <span class="copy-text" data-copy="0000003100049841162700">
+      000000 3100 0498 4116 2700
+    </span>
+    <button class="copy-btn" onclick="copyText(this)">📋</button>
+  </div>
 
-  <span data-i18n="swift_label">ALIAS</span>: JosefinayJuanca
+  <div class="bank-line">
+    <span>ALIAS</span>:
+    <span class="copy-text" data-copy="JosefinayJuanca">
+      JosefinayJuanca
+    </span>
+    <button class="copy-btn" onclick="copyText(this)">📋</button>
+  </div>
 </div>
+
 
 
     </div>
@@ -1136,6 +1191,15 @@ window.toggleAccommodation = function () {
       }
     });
   };
+window.copyText = function (button) {
+  const text = button.previousElementSibling.getAttribute("data-copy");
+  navigator.clipboard.writeText(text);
+
+  button.innerText = "✅";
+  setTimeout(() => {
+    button.innerText = "📋";
+  }, 1500);
+};
 
 });
 </script>
