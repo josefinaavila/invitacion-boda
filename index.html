@@ -538,25 +538,6 @@ iframe {
   text-decoration: none !important;
 }
 
-:root {
-  --decor-blue: rgba(43, 43, 43, 0.08);
-}
-.section-decorated {
-  position: relative;
-  overflow: hidden;
-}
-
-.section-decorated::before {
-  content: "☀️ 🌊 🌴 🧉";
-  position: absolute;
-  font-size: 120px;
-  opacity: 0.08;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-10deg);
-  pointer-events: none;
-  white-space: nowrap;
-}
 
 
 
@@ -613,8 +594,7 @@ iframe {
 
 <div class="section-divider"></div>
 
-<section class="section-decorated">
-
+<section>
   <h2 data-i18n="transport_title">🚌 Transporte</h2>
 
   <p data-i18n="transport_text">
