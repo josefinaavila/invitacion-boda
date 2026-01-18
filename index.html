@@ -497,28 +497,35 @@ iframe {
 /* ===== COPIAR DATOS BANCARIOS ===== */
 .bank-line {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 80px 1fr 24px;
   align-items: center;
-  gap: 8px;
-  margin-top: 6px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
+.bank-line span:first-child {
+  font-weight: 500;
+}
+
+.copy-text {
+  font-family: monospace;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
 
 .copy-btn {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 14px;
-  transition: transform 0.2s ease;
+  color: #2b2b2b;
+  padding: 0;
 }
 
 .copy-btn:hover {
-  transform: scale(1.2);
+  opacity: 0.6;
 }
 
-.copy-text {
-  font-weight: 500;
-}
 
 
 </style>
@@ -925,13 +932,13 @@ iframe {
     <span class="copy-text" data-copy="ES28 1583 0001 1890 1780 1677">
       ES28 1583 0001 1890 1780 1677
     </span>
-    <button class="copy-btn" onclick="copyText(this)">📋</button>
+    <button class="copy-btn" onclick="copyText(this)">⧉</button>
   </div>
 
   <div class="bank-line">
     <span>SWIFT</span>:
     <span class="copy-text" data-copy="REVOESM2">REVOESM2</span>
-    <button class="copy-btn" onclick="copyText(this)">📋</button>
+    <button class="copy-btn" onclick="copyText(this)">⧉</button>
   </div>
 </div>
 
@@ -953,7 +960,7 @@ iframe {
     <span class="copy-text" data-copy="0000003100049841162700">
       000000 3100 0498 4116 2700
     </span>
-    <button class="copy-btn" onclick="copyText(this)">📋</button>
+    <button class="copy-btn" onclick="copyText(this)">⧉</button>
   </div>
 
   <div class="bank-line">
@@ -961,7 +968,7 @@ iframe {
     <span class="copy-text" data-copy="JosefinayJuanca">
       JosefinayJuanca
     </span>
-    <button class="copy-btn" onclick="copyText(this)">📋</button>
+    <button class="copy-btn" onclick="copyText(this)">⧉</button>
   </div>
 </div>
 
@@ -1193,11 +1200,12 @@ window.copyText = function (button) {
   const text = button.previousElementSibling.getAttribute("data-copy");
   navigator.clipboard.writeText(text);
 
-  button.innerText = "✅";
+  button.innerText = "✓";
   setTimeout(() => {
-    button.innerText = "📋";
-  }, 1500);
+    button.innerText = "⧉";
+  }, 1200);
 };
+
 
 });
 </script>
