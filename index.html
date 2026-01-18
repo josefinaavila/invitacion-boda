@@ -453,6 +453,47 @@ iframe {
   line-height: 1.7;
   margin-top: 20px;
 }
+/* ===== FOOTER ===== */
+.footer {
+  padding: 80px 20px 60px;
+  background: #f1eee9;
+  text-align: center;
+}
+
+.footer h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.footer-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-gallery img {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.footer-gallery img:hover {
+  transform: translateY(-6px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-gallery img {
+    width: 45%;
+    height: 140px;
+  }
+}
 
 
 </style>
@@ -535,6 +576,25 @@ iframe {
   <p data-i18n="dress_code_text">
     Elegante<br>Chicas! Los vestidos largos no nos impiden bailarnos TODO<br>Chicos! Juanca se quitará la chaqueta/saco?
   </p>
+</section>
+<div class="section-divider"></div>
+
+<section>
+  <h2 data-i18n="confirm_title">💌 Confirmá tu asistencia</h2>
+
+  <p data-i18n="confirm_text">
+    Es muy importante para nosotros que confirmes tu asistencia.<br>
+    Por favor, completá el siguiente formulario.
+  </p>
+
+  <a
+    class="button"
+    href="https://TU_LINK_DE_GOOGLE_FORMS"
+    target="_blank"
+    data-i18n="confirm_button"
+  >
+    CONFIRMAR ASISTENCIA
+  </a>
 </section>
 
 
@@ -983,6 +1043,12 @@ window.toggleAccommodation = function () {
       nou_title: "Hotel Nou Baleares",
       nou_link: "Acceso directo a la web del hotel",
       nou_note: "Para reservar habitación con nuestro descuento ingresá el código promocional:",
+      confirm_title: "💌 Confirmá tu asistencia",
+      confirm_text: "Es muy importante para nosotros que confirmes tu asistencia.<br>Por favor, completá el siguiente formulario.",
+      confirm_button: "CONFIRMAR ASISTENCIA",
+      footer_title: "¡Te esperamos en nuestra isla preferida!",
+
+
 
 
 
@@ -1044,6 +1110,12 @@ window.toggleAccommodation = function () {
       nou_title: "Hotel Nou Baleares",
       nou_link: "Direct access to the hotel website",
       nou_note: "To book a room with our discount, please enter the following promotional code:",
+      confirm_title: "💌 RSVP",
+      confirm_text: "It is very important for us that you confirm your attendance.<br>Please complete the following form.",
+      confirm_button: "CONFIRM ATTENDANCE",
+      footer_title: "We can’t wait to welcome you to our favorite island!",
+
+
 
 
 
@@ -1067,6 +1139,18 @@ window.toggleAccommodation = function () {
 
 });
 </script>
+<footer class="footer">
+  <h3 data-i18n="footer_title">
+    ¡Te esperamos en nuestra isla preferida!
+  </h3>
+
+  <div class="footer-gallery">
+    <img src="foto1.jpg" alt="Josefina y Juanca">
+    <img src="foto2.jpg" alt="Josefina y Juanca">
+    <img src="foto3.jpg" alt="Josefina y Juanca">
+    <img src="foto4.jpg" alt="Josefina y Juanca">
+  </div>
+</footer>
 
 
 </body>
