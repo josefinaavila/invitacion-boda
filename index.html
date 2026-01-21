@@ -90,6 +90,12 @@ p {
   opacity: 1;
   transform: none;
 }
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .hero p {
   letter-spacing: 3px;
@@ -557,6 +563,23 @@ iframe {
   }
 }
 
+/* Fondo general de toda la web */
+body {
+  background-image: url("fondo-pattern.png");
+  background-repeat: repeat;
+  background-size: 600px;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Capa translúcida para que no sea abrumador */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: -1;
+}
 
 
 
